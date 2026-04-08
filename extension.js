@@ -128,7 +128,7 @@ export default class CompizWindowsEffectExtension extends Extension {
 
             this.resizedActor = null;
 
-            const metaWindowMaximized = Config.PACKAGE_VERSION >= 49 ? actor.metaWindow.get_maximize_flags() : actor.metaWindow.get_maximized();
+            const metaWindowMaximized = parseFloat(Config.PACKAGE_VERSION) >= 49 ? actor.metaWindow.get_maximize_flags() : actor.metaWindow.get_maximized();
             if (metaWindowMaximized) {
                 this.destroyActorEffect(actor);
 
